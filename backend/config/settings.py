@@ -127,7 +127,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 import os
 from dotenv import load_dotenv
 
@@ -136,3 +137,4 @@ load_dotenv()
 ORS_API_KEY = os.getenv("ORS_API_KEY")
 
 CORS_ALLOW_ALL_ORIGINS = True
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
