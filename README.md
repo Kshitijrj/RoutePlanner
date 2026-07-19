@@ -8,10 +8,10 @@ A full-stack web application built with **Django** and **React** that helps truc
 
 ## 🌐 Live Demo
 
-**Frontend:** https://your-vercel-url.vercel.app
+**Frontend:** [https://your-vercel-url.vercel.app](https://route-planner-eziae73nv-kshitijrjs-projects.vercel.app/)
 
-**Backend API:** https://your-render-url.onrender.com
-
+**Backend API:** [https://your-render-url.onrender.com
+](https://routeplanne.onrender.com/)
 **Loom Walkthrough:** https://loom.com/share/your-video-link
 
 ---
