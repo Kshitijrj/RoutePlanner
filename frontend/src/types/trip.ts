@@ -5,10 +5,21 @@ export interface TripInfo {
     remaining_cycle_hours: number;
 }
 
+export interface Legs {
+    current_to_pickup_km: number;
+    pickup_to_dropoff_km: number;
+}
+
 export interface Locations {
     current: string;
     pickup: string;
     dropoff: string;
+}
+
+export interface MarkerCoordinates {
+    current: [number, number];
+    pickup: [number, number];
+    dropoff: [number, number];
 }
 
 export interface Geometry {
@@ -45,7 +56,9 @@ export interface TimelineData {
 
 export interface TripResponse {
     trip: TripInfo;
+    legs: Legs;
     locations: Locations;
+    marker_coordinates: MarkerCoordinates;
     geometry: Geometry;
     timeline: TimelineData;
 }

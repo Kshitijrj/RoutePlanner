@@ -60,7 +60,12 @@ class TripService:
         )
 
         timeline = scheduler.generate()
+        pickup_coords = pickup_feature["geometry"]["coordinates"]
+        delivery_coords = delivery_feature["geometry"]["coordinates"]
 
+        current_marker = pickup_coords[0]
+        pickup_marker = pickup_coords[-1]
+        dropoff_marker = delivery_coords[-1]
         return {
             "trip": {
                 "distance_km": total_distance_km,
@@ -76,6 +81,11 @@ class TripService:
                 "current": data["current_location"],
                 "pickup": data["pickup_location"],
                 "dropoff": data["dropoff_location"],
+            },
+            "marker_coordinates": {
+                "current": current_marker,
+                "pickup": pickup_marker,
+                "dropoff": dropoff_marker,
             },
             "geometry": full_feature["geometry"],
             "timeline": timeline,

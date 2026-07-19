@@ -63,10 +63,20 @@ export default function MapView({ trip }: Props) {
     lat,
     lng,
   ]) as [number, number][];
+const current = [
+  trip.marker_coordinates.current[1],
+  trip.marker_coordinates.current[0],
+] as [number, number];
 
-  const current = coordinates[0];
-  const pickup = coordinates[Math.floor(coordinates.length / 2)];
-  const dropoff = coordinates[coordinates.length - 1];
+const pickup = [
+  trip.marker_coordinates.pickup[1],
+  trip.marker_coordinates.pickup[0],
+] as [number, number];
+
+const dropoff = [
+  trip.marker_coordinates.dropoff[1],
+  trip.marker_coordinates.dropoff[0],
+] as [number, number];
 
   return (
     <div className="relative">
