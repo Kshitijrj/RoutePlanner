@@ -1,4 +1,3 @@
-import React from "react";
 import type { ELDDayLog } from "../types/trip";
 
 interface Props {
@@ -95,7 +94,7 @@ export default function FMCSALogSheet({ date, log }: Props) {
           </div>
 
           {/* Rows */}
-          {ROW_NAMES.map((row, idx) => (
+          {ROW_NAMES.map((row) => (
             <div key={row} className="grid grid-cols-24 h-16 border-t">
               {Array.from({ length: 24 }).map((_, j) => (
                 <div key={j} className="relative border-l border-black">
