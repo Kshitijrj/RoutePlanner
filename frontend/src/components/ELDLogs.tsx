@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 
 import type { ELDDayLog } from "../types/trip";
-
 interface Props {
   logs: Record<string, ELDDayLog>;
+  onOpenFMCSA: () => void;
 }
 
 function Progress({
@@ -94,13 +94,19 @@ function formatTime(time: string) {
   return `${displayHour}:${minute.toString().padStart(2, "0")} ${period}`;
 }
 
-export default function ELDLogs({ logs }: Props) {
+export default function ELDLogs({
+  logs,
+  onOpenFMCSA,
+}: Props) {
   const [open, setOpen] = useState<Record<string, boolean>>({});
 
-  return (
-    <div className="bg-white rounded-2xl shadow-lg">
+ return (
+  <div className="bg-white rounded-2xl shadow-lg">
 
-      <div className="px-6 py-5 border-b">
+    {/* Header */}
+    <div className="px-6 py-5 border-b flex items-center">
+
+      <div className="flex-1">
 
         <h2 className="text-2xl font-bold flex items-center gap-3">
           <Clock3 className="text-blue-600" />
@@ -112,6 +118,20 @@ export default function ELDLogs({ logs }: Props) {
         </p>
 
       </div>
+
+      <button
+        onClick={onOpenFMCSA}
+        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl
+                   bg-gradient-to-r from-blue-600 to-cyan-600
+                   hover:from-blue-700 hover:to-cyan-700
+                   text-white font-semibold shadow-lg transition-all"
+      >
+        📋 FMCSA Log Sheet
+      </button>
+
+    </div>
+
+   
 
       <div className="p-6 space-y-6">
 
